@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryClient.MemberFormPage"
+             Title="Member">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Image x:Name="Photo" WidthRequest="120" HeightRequest="120"
+             Aspect="AspectFill" />
+            <Button Text="Choose Image" Clicked="OnChooseImageClicked" />
+
+            <Entry Placeholder="Name" Text="{Binding Member.Name}" />
+
+            <Label Text="Admission date" />
+            <DatePicker Date="{Binding Member.DateOfBirth}" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Is active" VerticalOptions="Center" />
+                <Switch IsToggled="{Binding Member.IsActive}" />
+            </HorizontalStackLayout>
+
+            <!-- detail data: one editable row per BorrowedBook -->
+            <Label Text="BorrowedBooks" FontAttributes="Bold" Margin="0,10,0,0" />
+            <VerticalStackLayout Spacing="5"
+                           BindableLayout.ItemsSource="{Binding BorrowedBooks}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,Auto" ColumnSpacing="5">
+                            <Entry Placeholder="Title" Text="{Binding Title}" />
+                            <Entry Grid.Column="1" Placeholder="Genre" Text="{Binding Genre}" />
+                            <Button Grid.Column="2" Text="X" Clicked="OnRemoveBorrowedBookClicked" />
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+            <Button Text="+ Add BorrowedBook" Clicked="OnAddBorrowedBookClicked" />
+
+            <Button Text="Save" Clicked="OnSaveClicked" Margin="0,20,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

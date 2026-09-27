@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "LibraryClient\\LibraryClient.csproj",
+        "Action": "Start",
+        "DebugTarget": "Windows Machine"
+      },
+      {
+        "Path": "LibraryServer\\LibraryServer.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      }
+    ]
+  }
+]

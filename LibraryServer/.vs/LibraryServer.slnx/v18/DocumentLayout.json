@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\LibraryApp\\LibraryServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDDD073E-0795-BDB1-CA47-181F1BF7F591}|LibraryClient\\LibraryClient.csproj|c:\\users\\user\\desktop\\libraryapp\\libraryserver\\libraryclient\\memberformpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDDD073E-0795-BDB1-CA47-181F1BF7F591}|LibraryClient\\LibraryClient.csproj|solutionrelative:libraryclient\\memberformpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 143,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MemberFormPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\LibraryApp\\LibraryServer\\LibraryClient\\MemberFormPage.xaml.cs",
+              "RelativeDocumentMoniker": "LibraryClient\\MemberFormPage.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\LibraryApp\\LibraryServer\\LibraryClient\\MemberFormPage.xaml.cs",
+              "RelativeToolTip": "LibraryClient\\MemberFormPage.xaml.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAuwCQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T05:14:14.578Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

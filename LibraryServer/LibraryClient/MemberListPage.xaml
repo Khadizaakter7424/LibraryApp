@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:LibraryClient.Models"
+             x:Class="LibraryClient.MemberListPage"
+             Title="Members">
+
+    <ContentPage.Resources>
+        <models:Base64ToImageConverter x:Key="Base64ToImage" />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*" Padding="10" RowSpacing="10">
+
+        <Button Text="+ Add Member" Clicked="OnAddClicked" />
+
+        <CollectionView Grid.Row="1" x:Name="MembersView">
+
+            <CollectionView.EmptyView>
+                <Label Text="No Members yet." HorizontalOptions="Center" Margin="20" />
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="0,5" Padding="10" Stroke="Gray" StrokeThickness="1"
+                  StrokeShape="RoundRectangle 8">
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto"
+                  ColumnSpacing="10" RowSpacing="8">
+
+                            <!-- master data -->
+                            <VerticalStackLayout Spacing="3">
+                                <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold" />
+                                <Label
+                  Text="{Binding DateOfBirth, StringFormat='Admission: {0:dd MMM yyyy}'}"/>
+                                <Label Text="{Binding IsActive, StringFormat='Active: {0}'}" />
+
+                                <!-- detail data: the BorrowedBooks -->
+                                <Label Text="BorrowedBooks:" FontAttributes="Bold" Margin="0,6,0,0" />
+                                <VerticalStackLayout BindableLayout.ItemsSource="{Binding BorrowedBooks}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <HorizontalStackLayout>
+                                                <Label Text="{Binding Title}" FontSize="Small" />
+                                                <Label Text="{Binding Genre, StringFormat=', {0}'}" FontSize="Small" />
+                                            </HorizontalStackLayout>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+
+                            <Image Grid.Column="1" WidthRequest="80" HeightRequest="80"
+                     Aspect="AspectFill" VerticalOptions="Start"
+                     Source="{Binding ImageUrl, Converter={StaticResource Base64ToImage}}" />
+
+                            <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="2" Spacing="10">
+                                <Button Text="Edit" Clicked="OnEditClicked" />
+                                <Button Text="Delete" Clicked="OnDeleteClicked" />
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

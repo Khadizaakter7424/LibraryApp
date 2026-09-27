@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="LibraryClient/LibraryClient.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="LibraryServer/LibraryServer.csproj" />
+</Solution>
